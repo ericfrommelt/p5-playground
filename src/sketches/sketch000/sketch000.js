@@ -22,17 +22,17 @@ let sketch = function(p) {
 
 	// Colors
 	let background = p.color(245, 245, 245);
-	let cgrey = p.color(152, 160, 168);
-	let cteal = p.color(45, 226, 226);
-	let cblack = p.color(38, 41, 45);
-	let cdrkGrey = p.color(107, 107, 107);
-	let cliteGrey = p.color(247, 247, 247);
-	let cPink = p.color(229, 32, 169);
-	let cyellow = p.color(238, 252, 61);
-	let cpinkTint = p.color(211, 159, 198);
+	let cgrey      = p.color(152, 160, 168);
+	let cteal      = p.color(45, 226, 226);
+	let cblack     = p.color(38, 41, 45);
+	let cdrkGrey   = p.color(107, 107, 107);
+	let cliteGrey  = p.color(247, 247, 247);
+	let cPink      = p.color(229, 32, 169);
+	let cyellow    = p.color(238, 252, 61);
+	let cpinkTint  = p.color(211, 159, 198);
 	let cneonGreen = p.color(3, 88, 250);
 	let gradYellow = p.color(254, 88, 110);
-	let baseColor = background;
+	let baseColor  = background;
 
 	let randNum = 0;
 	// let randNum = p.int(p.random(0, 5));
@@ -84,57 +84,57 @@ let sketch = function(p) {
 		
 		if (randNum === 1) {
 			background = cteal;
-			cblack = p.color(20, 20, 15);
-			cgrey = p.color(5, 61, 56);
-			cteal = p.color(52, 103, 92);
-			cdrkGrey = p.color(163, 204, 171);
-			cliteGrey = p.color(242, 104, 0);
-			cPink = p.color(229, 229, 235);
-			cyellow = p.color(238, 252, 61);
-			cpinkTint = p.color(211, 211, 211);
+			cblack     = p.color(20, 20, 15);
+			cgrey      = p.color(5, 61, 56);
+			cteal      = p.color(52, 103, 92);
+			cdrkGrey   = p.color(163, 204, 171);
+			cliteGrey  = p.color(242, 104, 0);
+			cPink      = p.color(229, 229, 235);
+			cyellow    = p.color(238, 252, 61);
+			cpinkTint  = p.color(211, 211, 211);
 		}
 		
 		if (randNum === 2) { 
 			background = p.background(7, 34, 51);
-			cblack = p.color(16, 69, 79); 
-			cgrey = p.color(79, 98, 102);
-			cteal = p.color(3, 41, 48);
-			cdrkGrey = p.color(163, 170, 119);
-			cliteGrey = p.color(189, 224, 55);
+			cblack     = p.color(16, 69, 79);
+			cgrey      = p.color(79, 98, 102);
+			cteal      = p.color(3, 41, 48);
+			cdrkGrey   = p.color(163, 170, 119);
+			cliteGrey  = p.color(189, 224, 55);
 			
-			cPink = p.color(4, 40, 63);
-			cyellow = p.color(0, 91, 82);
+			cPink     = p.color(4, 40, 63);
+			cyellow   = p.color(0, 91, 82);
 			cpinkTint = p.color(158, 193, 49);
-			// c = p.color(219, 242, 38);
-			// c = p.color(214, 212, 142);
+			  // c = p.color(219, 242, 38);
+			  // c = p.color(214, 212, 142);
 			background = p.color(16, 69, 79);
 		}
 
 		if (randNum === 3) {
 			background = p.background(245, 245, 245);
-			cgrey = p.color(152, 160, 168);
-			cteal = p.color(45, 226, 226);
-			cblack = p.color(38, 41, 45);
-			cdrkGrey = p.color(107, 107, 107);
-			cliteGrey = p.color(247, 247, 247);
-			cPink = p.color(229, 32, 169);
-			cyellow = p.color(238, 252, 61);
-			cpinkTint = p.color(211, 159, 198);
+			cgrey      = p.color(152, 160, 168);
+			cteal      = p.color(45, 226, 226);
+			cblack     = p.color(38, 41, 45);
+			cdrkGrey   = p.color(107, 107, 107);
+			cliteGrey  = p.color(247, 247, 247);
+			cPink      = p.color(229, 32, 169);
+			cyellow    = p.color(238, 252, 61);
+			cpinkTint  = p.color(211, 159, 198);
 		}
 
 
 		if (randNum === 4) {
 			background = p.color(16, 16, 16);
-			cgrey = p.color(242, 65, 130);
-			cteal = p.color(45, 226, 226);
-			cblack = p.color(44, 44, 54);
-			cdrkGrey = p.color(49, 16, 63);
-			cliteGrey = p.color(18, 16, 38);
-			cPink = p.color(242, 65, 130);
-			cyellow = p.color(238, 252, 61);
-			cpinkTint = p.color(214, 198, 216);
+			cgrey      = p.color(242, 65, 130);
+			cteal      = p.color(45, 226, 226);
+			cblack     = p.color(44, 44, 54);
+			cdrkGrey   = p.color(49, 16, 63);
+			cliteGrey  = p.color(18, 16, 38);
+			cPink      = p.color(242, 65, 130);
+			cyellow    = p.color(238, 252, 61);
+			cpinkTint  = p.color(214, 198, 216);
 			cneonGreen = p.color(147, 242, 88);
-			cyellow = p.color(238, 252, 61);
+			cyellow    = p.color(238, 252, 61);
 		}
 
 		p.bgCircles(p.width/2, p.height/2, p.random(10, 200));
@@ -297,7 +297,7 @@ let sketch = function(p) {
 	};
 
 	p.sevenPointLine = function(x, y, weight, color) {
-		
+
 		p.stroke(color);
 		p.strokeWeight(weight);
 		p.noFill();

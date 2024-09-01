@@ -19,6 +19,7 @@ let background = p.color(241, 240, 235)
 let lightPink = p.color(243, 201, 225)
 let pink = p.color(232, 152, 198)
 let green = p.color(115, 191, 126)
+let neonGreen = p.color(137, 252, 135)
 let yellow = p.color(252, 230, 30)
 let orange = p.color(242, 175, 94)
 let roarnge = p.color(242, 100, 88)
@@ -28,14 +29,14 @@ let black = p.color(53, 53, 53)
 
 // SETUP ////////////////////////////////////////////////////////////////////
 let t = 0;
-let v = 1;
+let v = 2;
 
 p.setup = () => {
   p.createCanvas(1080, 1080)
   p.pixelDensity(2)
   p.background(background)
   
-  
+  gui.add({v}, 'Version', {V1: 1, V2: 2})
   gui.add(nums, 'x', 0, p.width)
   gui.add(nums, 'y', 0, p.height)
   gui.add(nums, 'num', 0, 100)
@@ -50,36 +51,52 @@ p.setup = () => {
 p.draw = () => {
   let n = p.noise(t)
   
-  p.threeGreenCircles(100, 500, 100)
-  p.bigPinkBlock(40, 40)
-  p.gridBoard(100, 500, 20, 20, 200)
-  let r1 = p.random(10, 10);
-  p.gridBoard(370, p.random(500, 700), r1, r1, 160)
-  p.gridBoard(370+230, p.random(350, 800), 14, 14, 300)
-  p.blackEye(p.width / 2, p.height / 3, 230)
-  p.blockStructure(100, 1080, 40, 40, 60, pink, roarnge, yellow)
-  p.blockStructure(500, 1080, 20, 20, 60, background, background, background);
-  p.blockStructure(500, 600, 20, 20, 6, background, background, background);
-  p.blockStructure(500, 600, 4, 20, 6, background, background, background);
-  p.blockStructure(p.random(1080), 600, 4, 20, p.random(16), background, background, background);
-  p.blockStructure(p.random(1080), 600, 4, 20, p.random(16), background, background, background);
-  p.blockStructure(p.random(1080), 800, 4, 20, p.random(32), background, background, background);
-  p.speedLines(200, 200, 400, 20, 10, orange)
-  p.speedLines(200, p.random(200, 600), 100, 20, 10, pink)
-  p.speedLines(200, p.random(600, 1000), 100, 20, 10, lightPink)
-  p.speedLines(900, p.random(300, 1080), 20, 20, 10, lightPink)
-  p.blockStructure(p.random(100, 1000), 200, 2, 20, p.random(32), background, background, background);
-  p.fill(background)
-  p.blockStructure(p.random(100, 1000), p.random(600, 900), 2, 20, p.random(32), background, background, background);
-  p.cloudStructure(p.random(400, 800), p.random(600, 900), 40, 40)
-  p.arrows(100, 100, p.random(300), 100, 1, 10, yellow)
-  p.arrows(100, 400, p.random(20), 20, 10, p.random(20), yellow)
-  p.arrows(100, 800, p.random(20), 20, 10, p.random(20), yellow)
-  p.arrows(100, 900, p.random(20), 20, 10, p.random(20), yellow)
   
   if (v == 1) {
+    p.background(background)
+    p.threeGreenCircles(100, 500, 100)
+    p.bigPinkBlock(40, 40)
+    p.gridBoard(100, 500, 20, 20, 200)
+    let r1 = p.random(10, 10);
+    p.gridBoard(370, p.random(500, 700), r1, r1, 160)
+    p.gridBoard(370+230, p.random(350, 800), 14, 14, 300)
+    p.blackEye(p.width / 2, p.height / 3, 230)
+    p.blockStructure(100, 1080, 40, 40, 60, pink, roarnge, yellow)
+    p.blockStructure(500, 1080, 20, 20, 60, background, background, background);
+    p.blockStructure(500, 600, 20, 20, 6, background, background, background);
+    p.blockStructure(500, 600, 4, 20, 6, background, background, background);
+    p.blockStructure(p.random(1080), 600, 4, 20, p.random(16), background, background, background);
+    p.blockStructure(p.random(1080), 600, 4, 20, p.random(16), background, background, background);
+    p.blockStructure(p.random(1080), 800, 4, 20, p.random(32), background, background, background);
+    p.speedLines(200, 200, 400, 20, 10, orange)
+    p.speedLines(200, p.random(200, 600), 100, 20, 10, pink)
+    p.speedLines(200, p.random(600, 1000), 100, 20, 10, lightPink)
+    p.speedLines(900, p.random(300, 1080), 20, 20, 10, lightPink)
+    p.blockStructure(p.random(100, 1000), 200, 2, 20, p.random(32), background, background, background);
+    p.fill(background)
+    p.blockStructure(p.random(100, 1000), p.random(600, 900), 2, 20, p.random(32), background, background, background);
+    p.cloudStructure(p.random(400, 800), p.random(600, 900), 40, 40)
+    p.arrows(100, 100, p.random(300), 100, 1, 10, yellow)
+    p.arrows(100, 400, p.random(20), 20, 10, p.random(20), yellow)
+    p.arrows(100, 800, p.random(20), 20, 10, p.random(20), yellow)
+    p.arrows(100, 900, p.random(20), 20, 10, p.random(20), yellow)
     p.bangs(p.random(p.width / 2, p.width / 3), p.random(p.height / 2, p.height), 300, 30, p.random(10), black, 10)
     console.log("v: " + v)
+    }
+    
+    if (v == 2) {
+      let dLineY = p.random(500, p.height)
+      p.background(background)
+      p.bigPinkBlock(40, 40)
+      p.twoGreenCircles(100, 500, 300)
+      for (let i = 0; i < 12; i++) {
+        p.dataLines(0, dLineY, 200, 200, 10, background)
+      }
+      for (let i = 0; i < 12; i++) {
+        p.dataLines(0, dLineY, 200, 20, 10, background)
+        p.dataLines(0, dLineY+400, 200, 20, 10, background)
+      }
+      console.log("v: " + v)
   }
 
   t += 0.01
@@ -116,12 +133,38 @@ p.cloudStructure = (x, y, w, h) => {
 }
 
 p.bigPinkBlock = (x, y) => {
-  // Background
   p.noStroke(0)
-  p.fill(lightPink)
-  p.rect(nums.x, 20, p.width - 40, 300)
+  let r = p.random(1)
+  let iR = p.random(1)
+  console.log("r: " + r)
+  if (r < 0.3) {
+      p.fill(lightPink)
+      p.rect(x, y, p.width - p.random(20, 100), 300)
+      p.smallPinkBlocks(x, 300/2, 60, 60, 10)
+  } else if (r > 0.3 && r < 0.6) {
+      p.fill(lightPink)
+      p.rect(p.random(20, p.width), 20, p.random(100, 300), 300)
+      p.rect(p.random(20, p.width), 20, p.random(100, 300), 300)
+      p.rect(p.random(20, p.width), 20, p.random(100, 300), 300)
+      p.smallPinkBlocks(x, 300/3, 60, p.random(6, 200), p.random(2, 20))
+  } else if (r > 0.6) {
+      p.fill(neonGreen)
+      p.rect(x, y, 200, 300)
+      p.rect(x+p.random(x+p.width/2-200, x+p.width/2+200), y, 200, 300)
+      p.rect(x+p.width-200-20, y, 200, 300)
+
+      p.fill(lightPink)
+      for (let i = 0; i < p.random(20, 30); i++) {
+        iR = p.random(1)
+        if (iR > 0.5) {
+          p.rect(x+=p.random(20, 80), y+=p.random(20, 80), 100, 100)
+        } else if (iR < 0.5) {
+          p.rect(x+=p.random(20, 80), y-=p.random(100), 100, 100)
+        }
+      }
+  }
+
   // Pink block
-  p.smallPinkBlocks(x, 300/2, 60, 60, 10)
 
   // White blocks
   p.smallWhiteBlocks(x+p.width - p.random(200, 600), 300/2, 12, 37, 66)
@@ -132,7 +175,7 @@ p.smallPinkBlocks = (x, y, w, h, num) => {
   let xPos = []
   let yPos = []
 
-  for (let i = 0; i < nums.num; i++) {
+  for (let i = 0; i < num; i++) {
 
     xPos.push(p.random(w-5, w+5))
     yPos.push(p.random(y-20, y+20))
@@ -184,9 +227,12 @@ p.blackEye = (x, y, r) => {
   // p.circle(x, y, r*0.8);
 }
 
-let r4 = p.random(20, 200);
 let r2 = p.random(200, 600);
 let r3 = p.random(400, 800);
+let r4 = p.random(20, 200);
+let r5 = p.random(200, 400);
+let r6 = p.random(1080/2, 1080);
+let r7 = p.random(1080/2, 1080)
 
 p.threeGreenCircles = (x, y, r) => {
   p.noStroke();
@@ -195,7 +241,34 @@ p.threeGreenCircles = (x, y, r) => {
   p.circle(x + r4/2+r2/2, y+p.random(300, 600), r2);
   p.circle(x + r4/2+r2/2+r3/2, y, r3);
   // p.ellipse(x, y, r, r);
+}
+
+p.twoGreenCircles = (x, y, r) => {
+  let yMin = p.height / 3, yMax = p.height
+  let rY = p.random(yMin, yMax)
+  p.noStroke();
+  p.fill(green); 
+  p.circle(x, rY, r7);
+  p.circle(x+r6, rY, r7);
+  console.log("r5: " + r5)
+  console.log("r6: " + r6)
+}
+
+p.dataLines = (x, y, w, h, num, c) => {
+  p.noFill()
+  p.stroke(c)
+  p.strokeWeight(2)
+
+  let rY = p.random(p.width / 10, p.width - p.width / 3)
+  let rY2 = p.random(0, h)
+  p.beginShape()
+
+    p.vertex(0, y)
+    p.vertex(x+rY, y)
+    p.vertex(x+rY, y-rY2)
+    p.vertex(x+p.width, y-rY2)
   
+  p.endShape()
 }
 
 p.gridBoard = (x, y, w, h, num) => {
